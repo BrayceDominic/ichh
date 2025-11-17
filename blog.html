@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog — Zubeda Hassan Sakuru</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brown: brown;
+            --tan: tan;
+            --cream: #fffdfb;
+            --muted: #6b5a4a;
+        }
+
+        body {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            background-color: white;
+            color: var(--brown);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ---------------- HEADER (identical to About & Portfolio) ---------------- */
+        header {
+            background: #008fe2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        header .logo img {
+            height: 50px;
+            border-radius: 30px;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover,
+        nav .active {
+            color: #000;
+            background-color: #ffd32a;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header-social-links a i {
+            color: white;
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .header-social-links a i:hover {
+            color: #ffd32a;
+        }
+
+        @media (max-width: 991px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 15px;
+                background: #008fe2;
+                width: 220px;
+                padding: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
+
+        /* ---------------- Blog Layout ---------------- */
+        .container-blog {
+            max-width: 1900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .hero {
+            background: linear-gradient(0deg, rgba(123, 63, 0, 0.06), rgba(123, 63, 0, 0.02));
+            padding: 40px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .post-card {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .post-card .thumb {
+            height: 850px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 12px;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .sidebar .widget {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--muted);
+            background: var(--cream);
+            padding: 20px 0;
+        }
+
+        .header-social-links a {
+            color: var(--brown);
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .post-card .thumb {
+                height: 180px;
+            }
+        }
+
+        /* Notice Box */
+        .no-news {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .no-news-box {
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+        }
+
+        .no-news-box i {
+            font-size: 38px;
+            color: #008fe2;
+            margin-bottom: 10px;
+        }
+
+        .no-news-box h3 {
+            margin: 0;
+            color: #222;
+            font-weight: 700;
+        }
+
+        .no-news-box p {
+            color: #008fe2;
+            margin-top: 8px;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin-top: 50px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 6px;
+            font-weight: 800;
+            color: #444;
+        }
+
+        .gallery-subtitle {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #008fe2;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-card {
+            width: 90%;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+            transition: transform .25s ease;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header (copied exactly) ======= -->
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <img src="logo.jpg" alt="Logo">
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+                    <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Donate</a></li>
+                    <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Objectives</a></li>
+                    <li><a href="blog.html" class="active"><i class="bi bi-journal-text"></i> News & Events</a></li>
+                    <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle bi bi-list"></i>
+            </nav>
+
+            <div class="header-social-links">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+        </div>
+    </header>
+    <!-- ======= End Header ======= -->
+
+    <!-- Hero -->
+    <section class="hero" data-aos="fade-down">
+        <h1 style="color: #008fe2;">News & Events</h1>
+        <p style="color:#000;">
+            All official updates, announcements, speeches, and organizational events will appear here.
+            For now, explore our visual gallery below.
+        </p>
+    </section>
+
+    <!-- No News Notice -->
+    <section class=" no-news" data-aos="fade-up">
+        <div class="no-news-box">
+            <i class="bi bi-info-circle-fill"></i>
+            <h3>No News Available Yet</h3>
+            <p>We are currently preparing official news and event updates. Please check again soon.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Placeholder -->
+    <section class="gallery-section" data-aos="fade-up">
+        <h2 class="gallery-title">Photo Highlights & Gallery</h2>
+        <p class="gallery-subtitle">A glimpse into our activities, engagements, and community outreach.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-card" style="background-image:url('Desert.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Lactation2.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Lactation.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Lactating\ Mother.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Pregnancy2.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Forest.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Uzazi.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Uzazi2.jpg')"></div>
+            <div class="gallery-card" style="background-image:url('Pregnancy.jpg')"></div>
+        </div>
+    </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer light-background">
+        <div class="container">
+            <div class="copyright text-center">
+                <p>© 2025 <strong class="sitename" style="color: #008fe2;">Zubeda Hassan Sakuru</strong> | All Rights
+                    Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile Nav Toggle (matches About/Portfolio behavior)
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('#navmenu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+        }
+    </script>
+</body>
+
+
+</html>

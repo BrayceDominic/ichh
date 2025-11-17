@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Testimonials - Zubeda Hassan Sakuru</title>
+    <meta name="description" content="Testimonials from partners and leaders who worked with Zubeda Hassan Sakuru.">
+    <meta name="keywords" content="Zubeda Sakuru, Simba Sports Club, CEO, Testimonials, Tanzania">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brown: brown;
+            --tan: tan;
+            --white: #fff;
+            --muted: #6b5a4a;
+        }
+
+        body {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, Segoe UI, Roboto, sans-serif;
+            background-color: var(--white);
+            color: var(--brown);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header (identical to About & Portfolio) */
+        header {
+            background: #008fe2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        header .logo img {
+            height: 50px;
+            border-radius: 30px;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover,
+        nav .active {
+            color: #000;
+            background-color: #ffd32a;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header-social-links a {
+            color: white;
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .header-social-links a:hover {
+            color: #ffd32a;
+        }
+
+        @media (max-width: 991px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 15px;
+                background: #008fe2;
+                width: 220px;
+                padding: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
+
+        /* HERO SECTION */
+        #hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--brown);
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonial-carousel {
+            max-width: 900px;
+            margin: 60px auto;
+            position: relative;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .testimonial-slide {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-slide.active {
+            display: flex;
+        }
+
+        .testimonial-slide img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-slide p {
+            font-style: italic;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .testimonial-slide h6 {
+            font-weight: 700;
+            color: var(--brown);
+            margin-top: 10px;
+        }
+
+        .testimonial-controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .testimonial-btn {
+            background: var(--brown);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .testimonial-btn:hover {
+            background: var(--tan);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: #444;
+            padding: 25px;
+            background: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+
+            .testimonial-slide img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* NGO OBJECTIVES SECTION */
+        .ngo-objectives {
+            padding: 80px 20px;
+            background: #f8fafc;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        /* Header */
+        .ngo-header {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .ngo-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #008fe2;
+            /* Deep humanitarian tone */
+        }
+
+        .ngo-header p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Objectives Grid */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        /* Objective Cards */
+        .objective-card {
+            background: #008fe2;
+            padding: 30px 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.4s ease;
+            animation: fadeUp 1s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Icon Circle */
+        .objective-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd32a, #f9a825);
+            margin: auto;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            font-size: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(176, 0, 58, 0.3);
+        }
+
+        /* Titles */
+        .objective-card h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Body Text */
+        .objective-card p {
+            color: #fff;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Adjustment */
+        @media (max-width: 768px) {
+            .ngo-header h2 {
+                font-size: 2rem;
+            }
+
+            .objective-card {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Objectives List Styling */
+        .objective-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .objective-list li {
+            text-align: left;
+            padding-left: 22px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 0.98rem;
+            color: #fff;
+            line-height: 1.55;
+        }
+
+        .objective-list li::before {
+            content: "✔";
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (restored logo + nav + social icons exactly as About/Portfolio) -->
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <img src="logo.jpg" alt="Logo">
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+                    <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Donate</a></li>
+                    <li><a href="testimonials.html" class="active"><i class="bi bi-chat-quote"></i> Objectives</a></li>
+                    <li><a href="blog.html"><i class="bi bi-journal-text"></i> News & Events</a></li>
+                    <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle bi bi-list"></i>
+            </nav>
+
+            <div class="header-social-links">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- NGO OBJECTIVES SECTION -->
+    <section class="ngo-objectives" data-aos="fade-up">
+
+        <div class="ngo-header">
+            <h2>Our Core Objectives</h2>
+            <p>We are committed to improving the health, wellbeing, protection, and empowerment of mothers, children,
+                and vulnerable communities through sustainable interventions and strategic partnerships.</p>
+        </div>
+
+        <div class="objectives-grid">
+
+            <!-- HEALTH & HIV PREVENTION -->
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                </div>
+                <h3>Health & HIV Prevention</h3>
+                <ul class="objective-list">
+                    <li>Promote safe pregnancy practices to reduce mother-to-child HIV transmission.</li>
+                    <li>Enhance access to antiretroviral therapy for HIV-positive mothers.</li>
+                    <li>Raise awareness on regular HIV testing and counseling for pregnant women.</li>
+                    <li>Promote breastfeeding practices that minimize HIV transmission risk.</li>
+                    <li>Programs supporting the global HIV target of 95–95–95.</li>
+                </ul>
+            </div>
+
+            <!-- CHILD WELLBEING & SUPPORT -->
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h3>Child Wellbeing & Protection</h3>
+                <ul class="objective-list">
+                    <li>Improve children’s overall health and wellbeing.</li>
+                    <li>Provide vulnerable children (MVCs) with access to healthcare and education.</li>
+                    <li>Promote safety by preventing mistreatment, exploitation, and harmful behaviors.</li>
+                    <li>Connect children to nutrition, vaccination, and medical treatment campaigns.</li>
+                    <li>Encourage early detection and prevention of illnesses.</li>
+                </ul>
+            </div>
+
+            <!-- EDUCATION & AWARENESS -->
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <h3>Education & Awareness</h3>
+                <ul class="objective-list">
+                    <li>Raise awareness on good nutrition and hygiene.</li>
+                    <li>Promote health education for parents, caregivers, and children.</li>
+                    <li>Empower communities with knowledge to support HIV-positive mothers and children.</li>
+                    <li>Conduct research, observation, and learning assessments to improve programs.</li>
+                </ul>
+            </div>
+
+            <!-- COMMUNITY EMPOWERMENT -->
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <h3>Community Empowerment</h3>
+                <ul class="objective-list">
+                    <li>Educate and involve caregivers and MVCs in income-generating activities.</li>
+                    <li>Equip communities with resources to support maternal and child health.</li>
+                    <li>Build cooperation with the Tanzanian government and partner organizations.</li>
+                    <li>Strengthen community resilience through long-term support frameworks.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 <strong style="color: #008fe2;">Zubeda Hassan Sakuru</strong> | All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Nav
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('#navmenu');
+        navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        // Testimonials Carousel
+        const slides = document.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 6000);
+    </script>
+</body>
+
+</html>

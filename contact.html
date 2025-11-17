@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - Zubeda Hassan Sakuru</title>
+  <meta name="description" content="Contact page for Zubeda Hassan Sakuru, CEO of Simba Sports Club.">
+  <meta name="keywords" content="Zubeda Sakuru, Simba Sports Club, CEO, Contact, Tanzania">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brown: brown;
+      --tan: tan;
+      --cream: #fffdfb;
+      --muted: #6b5a4a;
+    }
+
+    body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      background-color: var(--cream);
+      color: var(--brown);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* HEADER (same as Blog page) */
+    header {
+      background: #008fe2;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+
+    header .logo img {
+      height: 50px;
+      border-radius: 30px;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 10px;
+      transition: color 0.3s, background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a:hover,
+    nav .active {
+      color: #000;
+      background-color: #ffd32a;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .header-social-links a {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 12px;
+      transition: 0.3s;
+    }
+
+    .header-social-links a:hover {
+      color: #ffd32a;
+    }
+
+    @media (max-width: 991px) {
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background: #008fe2;
+        width: 220px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+    }
+
+
+    /* Hero Section */
+    #hero {
+      text-align: center;
+      padding: 80px 20px 40px 20px;
+    }
+
+    #hero h2 {
+      font-size: 2.5rem;
+      color: #008fe2;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    #hero p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: #008fe2;
+      margin: 10px auto 25px auto;
+      border-radius: 2px;
+      animation: slideIn 1s ease forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      100% {
+        width: 80px;
+        opacity: 1;
+      }
+    }
+
+    /* Contact Section */
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto 100px auto;
+      padding: 20px;
+    }
+
+    .contact-card {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card h3,
+    .contact-card h4,
+    .contact-card h5 {
+      color: #008fe2;
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      color: #555;
+    }
+
+    .contact-card a.btn-submit {
+      background: #ffd32a;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact-card a.btn-submit:hover {
+      background: var(--tan);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* Social Cards */
+
+    .social-card {
+      background-color: #008fe2;
+    }
+
+    .social-card i {
+      font-size: 2rem;
+      color: #fff;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-card:hover i {
+      transform: scale(1.2);
+      color: #000;
+      background-color: #ffd32a;
+    }
+
+    .social-card h5 {
+      margin-top: 10px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .social-card p {
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--cream);
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--brown);
+    }
+
+    @media (max-width: 768px) {
+      #hero h2 {
+        font-size: 2rem;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+
+    iframe {
+      border-radius: 15px;
+      border: 0;
+      width: 100%;
+      height: 300px;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header (Blog-style) -->
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="logo.jpg" alt="Logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+          <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Donate</a></li>
+          <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Objectives</a></li>
+          <li><a href="blog.html"><i class="bi bi-journal-text"></i> News & Events</a></li>
+          <li><a href="contact.html" class="active"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h2 data-aos="fade-down">Get in Touch</h2>
+    <div class="divider" data-aos="fade-down"></div>
+    <p data-aos="fade-up">I’d love to hear from you. Connect through my verified channels or reach the office directly.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-container" data-aos="fade-up"> <!-- Executive Contact Card -->
+    <div class="contact-card text-center" data-aos="fade-down">
+      <h3>Executive Office Contact</h3>
+      <div class="divider"></div>
+      <p>For official engagements, partnership inquiries, and professional communication.</p>
+      <p><i class="bi bi-envelope-fill me-2"></i><a href="mailto:ichh.info@yahoo.com"
+          style="color:#008fe2;text-decoration:none;">ichh.info@yahoo.com</a></p>
+      <p><i class="bi bi-telephone-fill me-2"></i>+255 717 933 892</p>
+      <p><i class="bi bi-geo-alt-fill me-2"></i>P.O Box 349, Ifakara Morogoro, Tanzania</p>
+    </div> <!-- Social Media Cards -->
+    <div class="row g-4 mt-4">
+      <div class="col-md-6 col-lg-3"> <a href="https://x.com/" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center"> <i class="bi bi-twitter-x"></i>
+            <h5>Twitter (X)</h5>
+            <p>Official Updates</p>
+          </div>
+        </a> </div>
+      <div class="col-md-6 col-lg-3"> <a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center"> <i class="bi bi-instagram"></i>
+            <h5>Instagram</h5>
+            <p>Official Photos & Highlights</p>
+          </div>
+        </a> </div>
+      <div class="col-md-6 col-lg-3"> <a href="https://www.facebook.com/" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center"> <i class="bi bi-facebook"></i>
+            <h5>Facebook</h5>
+            <p>Community Interaction & News</p>
+          </div>
+        </a> </div>
+      <div class="col-md-6 col-lg-3"> <a href="https://www.linkedin.com/in/" target="_blank"
+          class="text-decoration-none">
+          <div class="contact-card social-card text-center"> <i class="bi bi-linkedin"></i>
+            <h5>LinkedIn</h5>
+            <p>Professional & Corporate Updates</p>
+          </div>
+        </a> </div>
+    </div> <!-- WhatsApp CTA -->
+    <div class="contact-card text-center mt-5" data-aos="fade-up">
+      <h4>WhatsApp Business</h4>
+      <div class="divider"></div>
+      <p>For quick inquiries and coordination</p> <a href="https://wa.me/" target="_blank" class="btn-submit"><i
+          class="bi bi-whatsapp me-2"></i>Chat on WhatsApp</a>
+    </div> <!-- Google Map Embed -->
+    <div class="contact-card mt-5" data-aos="fade-up">
+      <h4>Office Location</h4>
+      <div class="divider"></div> <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31339.6!2d36.6517!3d-8.1333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cf88f9f8a0b3d%3A0x437ea2c568f35d14!2sIfakara%2C%20Morogoro%2C%20Tanzania!5e0!3m2!1sen!2stz!4v1700240000000!5m2!1sen!2stz"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p style="color: #6b5a4a;">© 2025 <strong class="sitename" style="color: #008fe2;">Zubeda Hassan Sakuru</strong>
+          | All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile Navigation Toggle (Blog-style)
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('#navmenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+    }
+  </script>
+
+</body>
+
+</html>

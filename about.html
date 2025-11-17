@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About - IFAKARA CHILDREN HEALING HANDS</title>
+  <meta name="description" content="About IFAKARA CHILDREN HEALING HANDS, CEO of Simba Sports Club, Tanzania.">
+  <meta name="keywords" content="Zubeda Sakuru, Simba Sports Club, CEO, Tanzania, Leadership, Sports Management">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Inline CSS -->
+  <style>
+    :root {
+      --brown: brown;
+      --dark-brown: #8b0000;
+      --light-bg: #fffdfb;
+    }
+
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #333;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background: #008fe2;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+
+    header .logo img {
+      height: 50px;
+      border-radius: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fffdfb;
+      text-decoration: none;
+      font-weight: 500;
+      border: 2px solid #fffdfb;
+      font-weight: 500;
+      border-radius: 10px;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav .active {
+      color: #000;
+      background-color: #ffd32a;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 150vh;
+      background: url('desert.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      filter: brightness(40%);
+
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(139, 0, 0, 0.5); */
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #f8f8f8;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 100px 20px;
+      background-color: #fff;
+    }
+
+    .about-section h2 {
+      text-align: center;
+      color: #008fe2;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-img {
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 80px 0;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #008fe2;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 0;
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      background: #008fe2;
+    }
+
+    .timeline-item h5 {
+      font-weight: 600;
+      color: #008fe2;
+    }
+
+    /* Quote */
+    .quote {
+      background: linear-gradient(to bottom, #008fe2, #008fe2);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3rem;
+      border-radius: 13px;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: #f9f9f9;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 50px;
+    }
+
+    footer strong {
+      color: var(--brown);
+    }
+
+    .header-social-links a {
+      color: #fffdfb;
+      font-size: 1.2rem;
+      margin-left: 12px;
+      transition: 0.3s;
+    }
+
+    .header-social-links a:hover {
+      color: #ffd32a;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background: #008fe2;
+        width: 220px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .about-section {
+        padding: 60px 15px;
+      }
+    }
+
+    /* Modern Professional Experience */
+    .timeline-modern {
+      position: relative;
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .timeline-modern::before {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #008fe2, #fffdfb);
+      opacity: 0.3;
+    }
+
+    .timeline-card {
+      position: relative;
+      background: #008fe2;
+      border-radius: 18px;
+      padding: 25px 25px 25px 75px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      background: linear-gradient(135deg, #fff, #444, #444);
+      color: #008fe2;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      left: 15px;
+      top: 25px;
+      background: #fffdfb;
+      color: #008fe2;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+    }
+
+    .timeline-date {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark-brown);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      color: #fffdfb;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+      color: #fffdfb;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .timeline-modern::before {
+        left: 20px;
+      }
+
+      .timeline-card {
+        padding: 20px 20px 20px 60px;
+      }
+
+      .timeline-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+
+      .timeline-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="logo.jpg" alt="Logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a href="about.html" class="active"><i class="bi bi-person-circle"></i> About</a></li>
+          <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Donate</a></li>
+          <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Objectives</a></li>
+          <li><a href="blog.html"><i class="bi bi-journal-text"></i> News & Events</a></li>
+          <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>About Us</h1>
+      <p>IFAKARA CHILDREN HEALING HANDS, Ifakara, Morogoro TANZANIA</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <h2 data-aos="fade-up">Who Are We?</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4" data-aos="fade-right">
+          <img src="Forest.jpg" alt="Zubeda Sakuru" class="img-fluid about-img" style="height: 60vh;width: 100%;">
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <p class="about-text">
+            <strong>IFAKARA CHILDREN HEALING HANDS</strong> is a non-government organization that is charitable and has
+            its
+            headquarters in Ifakara, Tanzania works relentlessly to improve the lives of children, particularly to
+            prevent mother – to – child HIV transmission, we are registered under the
+            <span style="color: #008fe2; font-weight: 600;"> Non – Governmental Organization Act, 2002 with
+              registration NO. 12NGO/R/8223.</span>
+          </p>
+          <p class="about-text">
+            In ifakara, Morogoro region, Tanzania, the HIV prevalence rate among adults aged 15-49 is 4.6%,with women
+            facing higher rates than men (ihi.or.tz). This disparity contributes to significant challenges in preventing
+            mother-to-child transmission of HIV. Despite advancement remains inconsistent, leading to avoidable new HIV
+            infections among infants Recognizing these challenges, our organization is committed to reducing mother to
+            child HIV transmission in Ifakara.
+          </p>
+          <p class="about-text">
+            We focus on enhancing awareness, improving healthcare access, and ensuring the consistent implementation of
+            preventing mother-to-child transmission of HIV guidelines. By empowering communities and strengthening
+            healthcare systems, we aim to protect future generations from HIV.
+            The vision is to eliminate mother to child HIV transmission, ensuring all children are born free from HIV,
+            empowering mothers with education care and accessible health care services
+
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Timeline -->
+      <!-- <h2 data-aos="fade-up">Professional Experience</h2> -->
+
+      <div class="timeline-modern mt-5" data-aos="fade-up">
+
+        <div class="timeline-card" data-aos="fade-right">
+          <div class="timeline-icon">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <!-- <span class="timeline-date">July 2012 – July 2015</span> -->
+            <h5 class="timeline-title">Mission</h5> <br>
+            <p>To promote the translation of knowledge into practice through innovation, capacity-building models that
+              target health – care providers and community role players involved in material, neonatal, child and
+              women’s health and nutrition with a particular focus on family care the treatment of HIV/AIDS.
+              <br> <br> To support the families and concerned community members in giving the most vulnerable children
+              (MVC)
+              attention, care, education, skills and psychological support for every aspect of their lives in order to
+              enhance the children’s overall well-being
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-card" data-aos="fade-left">
+          <div class="timeline-icon">
+            <i class="bi bi-bank2"></i>
+          </div>
+          <div class="timeline-content">
+            <!-- <span class="timeline-date">November 2015 – November 2020</span> -->
+            <h5 class="timeline-title">Vision</h5> <br>
+            <p>The vision is to eliminate mother to child HIV transmission, ensuring all children are born free from
+              HIV, empowering mothers with education care and accessible health care services</p>
+          </div>
+        </div>
+        <br><br>
+
+
+
+      </div>
+
+      <!-- Quote -->
+      <section class="quote" data-aos="zoom-in">
+        <p>"Preventing Mother to child HIV Transmission"</p>
+        <span>- IFAKARA CHILDREN HEALING HANDS</span>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 <strong style="color: #008fe2;">IFAKARA CHILDREN HEALING HANDS</strong> | All Rights Reserved.</p>
+      </footer>
+
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Nav
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('#navmenu');
+        navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+      </script>
+
+</body>
+
+</html>
